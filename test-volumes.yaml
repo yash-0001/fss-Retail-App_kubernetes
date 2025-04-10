@@ -19,5 +19,18 @@ spec:
     volumeID: vol-070c0f15d40fd594d
     fsType: ext4  
   #persistentVolumeReclaimPolicy: Recycle
+--- 
+apiVersion: v1 
+kind: PersistentVolumeClaim 
+metadata:
+  name: my-ebc-pvc 
+spec: 
+  storageClassName: manual 
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi 
+  volumeName: my-ebs-volume           
 
   
