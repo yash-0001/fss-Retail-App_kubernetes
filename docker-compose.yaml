@@ -5,11 +5,11 @@ services:
     build: . 
     container_name: frontend-cont 
     ports:
-      - '3131:3130
+      - '3130:3130'
     depends_on:
       - mongodb  
     environment:
-      - MONGODB_URI=mongodb://localhost:27017/myDatabase
+      - MONGODB_URI=mongodb://mongodb:27017/myDatabase
       - SESSION_SECRET=1234
       - PORT=3130
       - EMAIL_USER=chagantyteja2502@gmail.com
