@@ -27,7 +27,7 @@ spec:
         - name: EMAIL_PASS
           value: "yxoq bjuk rdnt alzp"
         - name: PORT
-          value: "3130"
+          value: "3130"    
 --- 
 apiVersion: v1
 kind: Service
