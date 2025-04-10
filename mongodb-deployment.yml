@@ -19,15 +19,16 @@ spec:
         - containerPort: 27017
         env:
         - name: MONGO_INITDB_DATABASE
-          value: "myDatabase"  # Change this if necessary
+          value: "myDatabase"
         volumeMounts:
-          - name: mytest-volume 
-            mountPath: /data/db   
+        - name: mytest-volume
+          mountPath: /data/db
       volumes:
-        - name: mytest-volume 
-          PersistentVolumeClaim:
-            claimName: my-ebc-pvc    
---- 
+      - name: mytest-volume
+        persistentVolumeClaim:
+          claimName: my-ebc-pvc
+
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -36,7 +37,6 @@ spec:
   selector:
     app: mongodb
   ports:
-    - port: 27017
-      targetPort: 27017
-      protocol: TCP
-
+  - port: 27017
+    targetPort: 27017
+    protocol: TCP
