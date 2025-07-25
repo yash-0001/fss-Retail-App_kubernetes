@@ -20,13 +20,13 @@ spec:
         env:
         - name: MONGO_INITDB_DATABASE
           value: "myDatabase"
-        volumeMounts:
-        - name: mytest-volume
-          mountPath: /data/db
-      volumes:
-      - name: mytest-volume
-        persistentVolumeClaim:
-          claimName: my-ebc-pvc
+   #     volumeMounts:
+   #    - name: mytest-volume
+   #       mountPath: /data/db
+   #   volumes:
+   #   - name: mytest-volume
+   #     persistentVolumeClaim:
+   #       claimName: my-ebc-pvc
 
 ---
 apiVersion: v1
